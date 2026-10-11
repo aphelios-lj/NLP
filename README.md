@@ -65,12 +65,11 @@ tqdm
 
 ## 数据与模型准备
 
-本项目未包含数据文件与预训练模型，请按以下方式放置：
+受github上传空间硬性限制，仓库中的本项目可能未包含某些数据文件与预训练模型，请按以下方式放置：
 
 1. **NYT 数据集**：`nyt.csv` 放入 `data/`，含 `text`、`label` 两列。
 2. **AG News 数据集**：`ag.csv` 放入 `data/`，含 `text` 列。
 3. **GloVe 100d**：下载 [http://nlp.stanford.edu/data/glove.6B.zip](http://nlp.stanford.edu/data/glove.6B.zip)，将 `glove.6B.100d.txt` 放入 `glove/`。
-4. **BERT-base-uncased**：从 HuggingFace 获取 `google-bert/bert-base-uncased`，放入项目根目录的 `bert-base-uncased/`。
 
 ---
 
@@ -108,14 +107,14 @@ python -m src.main
 
 ## 实验结果
 
-### Task 1: Bag of Words（30 分）
+### Task 1: Bag of Words
 
 | 方法 | Validation Accuracy | Validation Macro-F1 | Test Accuracy | Test Macro-F1 |
 |---|---:|---:|---:|---:|
 | Binary Bag of Words | 0.9835 | 0.9596 | 0.9887 | 0.9728 |
 | Word Frequency | 0.9809 | 0.9508 | **0.9922** | **0.9820** |
 
-### Task 2: Word Embedding（50 分）
+### Task 2: Word Embedding
 
 统一使用 100 维词向量，文档向量通过对文档内所有有效词向量取平均得到。
 
@@ -125,7 +124,7 @@ python -m src.main
 | Word2Vec on AG News | 0.9748 | 0.9389 | 0.9774 | 0.9495 |
 | Word2Vec on NYT | 0.9748 | 0.9365 | **0.9792** | **0.9502** |
 
-### Task 3: BERT Fine-tuning（20 分）
+### Task 3: BERT Fine-tuning
 
 配置：`bert-base-uncased`，`max_len=64`，`epochs=3`，`lr=2e-5`。
 
