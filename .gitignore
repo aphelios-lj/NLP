@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# 虚拟环境（体积巨大，不上传）
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# 运行输出
+outputs/
+
+# 预训练模型与词向量（体积大，README 说明来源）
+glove/
+bert-base-uncased/
+
+# HuggingFace 缓存
+.cache/
